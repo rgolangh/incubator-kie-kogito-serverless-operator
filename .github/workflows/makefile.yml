@@ -7,13 +7,13 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: golang:1.19
 
     steps:
     - uses: actions/checkout@v3
 
     - name: Install dependencies
-      run: sudo apt-get update && sudo apt-get -y install podman golang-1.20  git
+      run: sudo apt-get update && sudo apt-get -y install podman 
 
     - name: Container build
       run: make podman-build
