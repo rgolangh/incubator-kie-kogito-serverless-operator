@@ -1,11 +1,9 @@
-name: Makefile CI
+name: Container Images
 
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
+  
 jobs:
   build:
 
@@ -13,9 +11,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-
-    - name: configure
-      run: ./configure
 
     - name: Install dependencies
       run: make podman git
